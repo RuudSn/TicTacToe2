@@ -25,4 +25,11 @@ public class Player {
     public void setScore(int extraPoints){
         this.score = score + extraPoints; }
 
+    @Override
+    public String toString() {
+        return "Player{" +
+                "name='" + name + '\'' +
+                ", score=" + score +
+                '}';
+    }
 }

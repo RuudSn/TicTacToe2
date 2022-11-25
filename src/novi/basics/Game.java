@@ -1,5 +1,6 @@
 package novi.basics;
 
+import java.io.File;
 import java.util.Scanner;
 
 public class Game {
@@ -86,6 +87,22 @@ public class Game {
         if(board[2].getToken()==currentPlayerToken&&board[4].getToken()==currentPlayerToken&&board[6].getToken()==currentPlayerToken){
             return true; }
         return false;
+    }
+
+
+    public void printScores(int gameNr){
+        System.out.println("resultaten na "+gameNr+"  potjes:" );
+        System.out.println("Speler " + playerA.getName() + " heeft " + playerA.getScore() + " punten.");
+        System.out.println("Speler " + playerB.getName() + " heeft " + playerB.getScore() + " punten.");
+    }
+
+
+    public void fileScores(){
+        String scoreA = playerA.toString();
+        String scoreB = playerB.toString();
+        File file = new File("scores.txt");
+        FileManager fileHandler = new FileManager(file);
+        fileHandler.fileScores(scoreA, scoreB);
     }
 
 
